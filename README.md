@@ -1,6 +1,9 @@
 # 🤖 Auto-Fixer: Autonomous Developer Agent
 
-> An end-to-end autonomous engineering agent that bridges bug reports to verified Pull Requests through local environment code surgery, Playwright UI inspection, Gemini AI diagnostics, and seamless two-way Slack/Linear integration.
+> Auto-Fixer is an autonomous developer agent that bridges Linear bug reports directly to verified Pull Requests by changing code locally through automated file surgery.
+It harnesses Playwright UI inspection and Google Gemini AI diagnostics to automatically isolate, debug, and patch software defects.
+The agent enforces strict enterprise safety via interactive Slack Block Kit workflows, pausing for human approval before touching any code.
+Once approved, it executes clean Git automation, runs visual verification snapshots, pushes PRs, and syncs status updates back to Linear.
 
 ---
 
