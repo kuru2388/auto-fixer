@@ -1,4 +1,5 @@
 import os
+import time
 import subprocess
 import requests
 from dotenv import load_dotenv
@@ -21,12 +22,14 @@ def run_command(command):
 
 def push_and_create_pr(ticket_id, diagnosis_text):
     """Automates the git workflow safely and opens a PR"""
-    branch_name = f"fix/{ticket_id.lower()}"
+    # 🟢 FIX: Adding a timestamp so the branch name is ALWAYS unique!
+    branch_name = f"fix/{ticket_id.lower()}-{int(time.time())}"
     
     print(f"🌿 1. Preparing branch: {branch_name}")
     # Switch to main and clean up any old local version of this branch safely
     run_command("git checkout main")
-    run_command(f"git branch -D {branch_name}")
+    # We can ignore the delete command failing if the branch doesn't exist yet
+    run_command(f"git branch -D {branch_name}") 
     run_command(f"git checkout -b {branch_name}")
     
     print("💾 2. Staging specific code files...")
@@ -61,3 +64,9 @@ def push_and_create_pr(ticket_id, diagnosis_text):
     else:
         print(f"❌ PR failed. GitHub says: {response.json()}")
         return None
+
+# Quick test block to run this file on its own
+if __name__ == "__main__":
+    print("Testing github_agent.py directly...")
+    pr = push_and_create_pr("AUT-5", "Dummy diagnosis fix")
+    print(f"PR Link: {pr}")
