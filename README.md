@@ -5,8 +5,8 @@
 ---
 
 ## 🎥 Demo Video
-Watch our 2-minute submission demo video here:  
-[![Auto-Fixer Demo Video](https://img.shields.io/badge/Watch-Demo%20Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/naWmdTNIq_k)
+Watch our 2-minute submission demo video here:
+[![Auto-Fixer Demo Video](https://img.youtube.com/vi/naWmdTNIq_k/hqdefault.jpg)](https://youtu.be/naWmdTNIq_k)
 
 ---
 
@@ -47,5 +47,51 @@ Building an autonomous agent that touches code requires strict safety guardrails
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/auto-fixer.git](https://github.com/your-username/auto-fixer.git)
+git clone https://github.com/kuru2388/auto-fixer.git
 cd auto-fixer
+```
+
+### 2. Create and Activate a Python Virtual Environment
+
+**macOS / Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+**Windows (PowerShell):**
+```powershell
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Environment Variables
+Create a `.env` file in the project root and add the following keys:
+
+```env
+# Slack App Level Token (Starts with xapp-)
+SLACK_APP_TOKEN=
+
+# Slack Bot Token (Starts with xoxb-)
+SLACK_BOT_TOKEN=
+
+# Linear API Key (Starts with lin_api_)
+LINEAR_API_KEY=
+
+# GitHub Fine-Grained Token
+GITHUB_TOKEN=
+
+# Google Gemini API Key
+GEMINI_API_KEY=
+```
+
+### 5. Run the Agent
+With your virtual environment activated:
+```bash
+python main.py
+```
