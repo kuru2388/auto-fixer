@@ -6,7 +6,7 @@
 
 ## 🎥 Demo Video
 Watch our 2-minute submission demo video here:
-[![Auto-Fixer Demo Video](https://img.youtube.com/vi/naWmdTNIq_k/hqdefault.jpg)](https://youtu.be/naWmdTNIq_k)
+[![Auto-Fixer Demo Video](https://img.shields.io/badge/Watch-Demo%20Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/naWmdTNIq_k)
 
 ---
 
